@@ -327,3 +327,40 @@ min-height: 120px;
     }
 }
 
+/* Form Section Styling */
+.form-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #168fc0 0%, #0d5a7a 100%);
+    padding: 20px;
+}
+
+.form-section .form-box {
+    margin: 0;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Ensure form is properly centered */
+.form-section .form-box p {
+    text-align: center;
+}
+
+.form-section .form-group {
+    align-items: center;
+}
+
+.form-section .form-group label {
+    text-align: left;
+    width: 100%;
+}
+
+.form-section .submit-btn {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    display: block;
+}
+

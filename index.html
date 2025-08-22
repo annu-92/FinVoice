@@ -21,9 +21,9 @@
                     <a href="#"><img src="img/logo3.jpg" class="logo" alt="Logo" ></a>
                     <span class="logo-text">FINVOICE</span>
                 </div>
-                <li><a href="#index">Home</a></li>
+                <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#login-signup">Login/SignUp</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -70,13 +70,13 @@
 </section>
 
     <div>
-        <section id="play">
+        <section id="login-signup" class="form-section" style="display: none;">
             <div class="form-box">
                 <p>Login/SignUp</p>
                 <form>
                     <div class="form-group">
                         <label for="Name">Name</label>
-                        <input type="text" id="Name" placeholder="Enter your name" required>
+                        <input type="text" id="Name" name="Name" placeholder="Enter your name" required>
                     </div>
                     <div class="form-group">
                         <label for="Date-Of-Birth">Date of Birth</label>
@@ -84,11 +84,11 @@
                     </div>
                     <div class="form-group">
                         <label for="Email-Id">Email-Id</label>
-                        <input type="text" id="Email-Id" placeholder="Enter your email" required>
+                        <input type="text" id="Email-Id" name="Email-Id" placeholder="Enter your email" required>
                     </div>
                     <div class="form-group">
                         <label for="Phone-Number">Phone Number</label>
-                        <input type="text" id="Phone-Number" placeholder="Enter your phone number" required>
+                        <input type="text" id="Phone-Number" name="Phone-Number" placeholder="Enter your phone number" required>
                     </div>
                     <button class="submit-btn" type="submit">Submit</button>
                 </form>
@@ -100,7 +100,7 @@
 <!-- Chatbot Container -->
 <div id="bp-web-widget-container"></div>
 
-<footer>
+<footer id="contact">
     <div class="footer-content">
         <p>© 2025 STEMverse. All rights reserved.</p>
         <p>Made by Team STEMverse</p>
@@ -116,7 +116,6 @@
 <script src="script.js"></script> 
 <script src="https://cdn.botpress.cloud/webchat/v3.2/inject.js"></script>
 <script>
-    // Wait for Botpress to be available
     (function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
