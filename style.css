@@ -5,7 +5,7 @@
 }
 
 body{
-    background-color: #0a0a23;
+    background-color: #168fc0;
     font-family: 'Poppins', sans-serif;
     color: #ffffff;
     line-height: 1.5;
@@ -55,9 +55,10 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
+  align-items: center;
   margin: 0;
-  padding: 0;
+  padding: 0 20px;
 }
 nav ul li {
   margin: 0 20px;
@@ -72,6 +73,16 @@ nav ul li a {
 }
 nav ul li a:hover {
   color: #00bcd4;
+}
+
+/* Logo and logo text container */
+.logo-container {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
 }
 
 /* Hero Section Overlay */
@@ -291,5 +302,28 @@ min-height: 120px;
   grid-row: auto !important;
   max-width: 100%;
 }
+}
+
+/* Chatbot Styling */
+#bp-web-widget-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#bp-web-widget-container > * {
+    pointer-events: auto;
+}
+
+/* Ensure chatbot doesn't overlap with footer */
+@media (max-width: 768px) {
+    #bp-web-widget-container {
+        bottom: 10px;
+        right: 10px;
+    }
 }
 

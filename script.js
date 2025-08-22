@@ -56,4 +56,62 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+// Botpress Chatbot Initialization
+function initializeChatbot() {
+    if (window.botpressWebChat) {
+        window.botpressWebChat.init({
+            "composerPlaceholder": "Chat with FinVoice AI Assistant",
+            "botConversationDescription": "Get personalized financial advice and manage your money with voice commands",
+            "botId": "20250822042015-G3IXMQX1",
+            "hostUrl": "https://cdn.botpress.cloud/webchat/v3.2",
+            "messagingUrl": "https://messaging.botpress.cloud",
+            "clientId": "20250822042015-G3IXMQX1",
+            "webhookId": "20250822042015-G3IXMQX1",
+            "lazySocket": true,
+            "themeName": "prism",
+            "frontendVersion": "v3.2.0",
+            "showPoweredBy": false,
+            "theme": "dark",
+            "themeColor": "#168fc0"
+        });
+        
+        // Show the chatbot
+        setTimeout(() => {
+            if (window.botpressWebChat.sendEvent) {
+                window.botpressWebChat.sendEvent({ type: "show" });
+            }
+        }, 2000);
+    } else {
+        // Retry after a short delay
+        setTimeout(initializeChatbot, 1000);
+    }
+}
+
+// Start initialization when page loads
+window.addEventListener('load', function() {
+    setTimeout(initializeChatbot, 2000);
+});
+
+// Also try on DOM ready
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(initializeChatbot, 3000);
+});
+
+// Add test button functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const testButton = document.getElementById('test-chatbot');
+    if (testButton) {
+        testButton.addEventListener('click', function() {
+            console.log('Test button clicked');
+            console.log('botpressWebChat available:', !!window.botpressWebChat);
+            if (window.botpressWebChat) {
+                console.log('Initializing chatbot manually...');
+                initializeChatbot();
+            } else {
+                console.log('Botpress not loaded yet');
+            }
+        });
+    }
+});
+
   
